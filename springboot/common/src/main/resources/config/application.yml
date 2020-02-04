@@ -1,0 +1,18 @@
+#端口和访问地址
+server:
+  port: 8986
+  servlet:
+    context-path: /play/
+
+spring:
+  profiles:
+    active: dev
+
+logging:
+  config: classpath:config/logback-spring.xml
+
+
+
+
+
+

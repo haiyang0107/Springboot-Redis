@@ -1,0 +1,16 @@
+# 数据库连接
+spring:
+  datasource:
+    # 测试数据库
+    # Mysql 数据库配置
+     url: jdbc:mysql://localhost:3306/common?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+     username: root
+     password: 12345678
+     driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      # 自动更新
+      ddl-auto: update
+    # 控制台打印SQl语句
+    show-sql: true
+
