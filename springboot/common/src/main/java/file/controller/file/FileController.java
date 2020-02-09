@@ -1,13 +1,12 @@
 package file.controller.file;
 
-import com.huishu.file.FileServer.common.AjaxResult;
-import com.huishu.file.FileServer.common.conf.ConfConstant;
-import com.huishu.file.FileServer.controller.BaseController;
-import com.huishu.file.FileServer.entity.FilePdf;
-import com.huishu.file.FileServer.service.PdfServie;
-import org.apache.log4j.Logger;
+
+import constants.ConfConstant;
+import file.common.AjaxResult;
+import file.controller.BaseController;
+import file.entity.FilePdf;
+import file.service.PdfServie;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-import org.icepdf.core.pobjects.Document;
 import org.icepdf.core.util.GraphicsRenderingHints;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.apache.log4j.Logger;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +27,7 @@ import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.UUID;
+import org.icepdf.core.pobjects.Document;
 
 /**
  * 文件上传类

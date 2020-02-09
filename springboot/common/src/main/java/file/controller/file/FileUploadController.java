@@ -1,8 +1,8 @@
 package file.controller.file;
 
-import com.huishu.file.FileServer.common.AjaxResult;
-import com.huishu.file.FileServer.common.util.CommonUtil;
-import com.huishu.file.FileServer.controller.BaseController;
+import file.common.AjaxResult;
+import file.common.util.CommonUtil;
+import file.controller.BaseController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

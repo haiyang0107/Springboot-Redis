@@ -1,9 +1,10 @@
 package file.controller.file;
 
-import com.huishu.file.FileServer.common.conf.ConfConstant;
-import com.huishu.file.FileServer.controller.BaseController;
-import com.huishu.file.FileServer.entity.IndustryReport;
-import com.huishu.file.FileServer.service.IntfIndustryReportService;
+
+import constants.ConfConstant;
+import file.controller.BaseController;
+import file.entity.IndustryReport;
+import file.service.IntfIndustryReportService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,7 @@
 package file.controller;
 
-import com.huishu.file.FileServer.common.AjaxResult;
+
+import file.common.AjaxResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;
