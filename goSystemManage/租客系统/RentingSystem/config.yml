@@ -1,0 +1,34 @@
+# Gin-Vue-Admin Global Configuration
+
+# casbin configuration
+casbin:
+  model-path: './resource/rbac_model.conf'
+
+# jwt configuration
+jwt:
+  signing-key: 'qmPlus'
+
+# mysql connect configuration
+mysql:
+  username: root
+  password: '12345678'
+  path: '127.0.0.1:3306'
+  db-name: 'gotest'
+  config: 'charset=utf8&parseTime=True&loc=Local'
+  max-idle-conns: 10
+  max-open-conns: 10
+  log-mode: false
+
+# system configuration
+system:
+  use-multipoint: false
+  env: 'public'  # Change to "develop" to skip authentication for development mode
+  addr: 8888
+  db-type: "mysql"  # support mysql/sqlite
+
+# logger configuration
+log:
+  prefix: '[GIN-VUE-ADMIN]'
+  log-file: true
+  stdout: 'DEBUG'
+  file: 'DEBUG'
