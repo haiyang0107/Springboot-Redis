@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 决定了 映射接口 -->
+<mapper namespace="com.springboot.configdemo.dao.UserMapper">
+    <!-- 查询时 接口定义的方法名称，必须和 id == 的是相同的 -->
+    <select id="findList" resultMap="userInfo">
+        select * from t_user
+    </select>
+    <!--resultMap 可以看作是对实体类的属性字段以及 数据库的属性字段之间的映射
+
+    -->
+    <resultMap id="userInfo" type="com.springboot.configdemo.entity.User">
+            <id column="id" property="id" jdbcType="INTEGER"/>
+            <result column="name" property="name" jdbcType="VARCHAR" />
+            <result column="age" property="age" jdbcType="INTEGER" />
+    </resultMap>
+</mapper>
