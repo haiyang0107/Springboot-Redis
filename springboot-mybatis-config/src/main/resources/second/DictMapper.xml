@@ -2,32 +2,34 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!-- namespace 决定了 映射接口 -->
-<mapper namespace="com.springboot.configdemo.dao.master.UserMapper">
+<mapper namespace="com.springboot.configdemo.dao.second.DictMapper">
+
     <!-- 查询时 接口定义的方法名称，必须和 id == 的是相同的 -->
-    <select id="findList" resultMap="userInfo">
+    <select id="findList" resultMap="dictInfo">
         SELECT * FROM
         <include refid="TableName"/>
     </select>
 
     <!-- insert 时，没有 resultMap 或者 resultType 传入实体时，应该用parameterType  -->
-    <insert id="insertUser"  parameterType="com.springboot.configdemo.entity.master.User">
+    <insert id="insertDict"  parameterType="com.springboot.configdemo.entity.second.Dict">
         INSERT INTO  <include refid="TableName"/>
-         (`id`,`name`,`age`)
-        VALUES (#{id},#{name},#{age})
+         (`id`,`type`,`value`)
+        VALUES (#{id},#{type},#{value})
     </insert>
-    <delete id="deleteUser" parameterType="Integer">
-        DELETE FROM t_user where id = #{id}
+    <delete id="deleteDict" parameterType="Integer">
+        DELETE FROM  <include refid="TableName"/> where id = #{id}
     </delete>
 
-    <sql id="TableName">t_user</sql>
+    <sql id="TableName">t_dict</sql>
 
     <!--resultMap 可以看作是对实体类的属性字段以及 数据库的属性字段之间的映射
         column 对应数据库的表字段
     -->
-    <resultMap id="userInfo" type="com.springboot.configdemo.entity.master.User">
+    <resultMap id="dictInfo" type="com.springboot.configdemo.entity.second.Dict">
             <id column="id" property="id" jdbcType="INTEGER"/>
-            <result column="name" property="name" jdbcType="VARCHAR" />
-            <result column="age" property="age" jdbcType="INTEGER" />
+            <result column="type" property="type" jdbcType="VARCHAR" />
+            <result column="value" property="value" jdbcType="VARCHAR" />
     </resultMap>
 </mapper>

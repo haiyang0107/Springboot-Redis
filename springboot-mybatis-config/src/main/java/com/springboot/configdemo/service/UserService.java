@@ -1,7 +1,7 @@
 package com.springboot.configdemo.service;
 
-import com.springboot.configdemo.dao.UserMapper;
-import com.springboot.configdemo.entity.User;
+import com.springboot.configdemo.dao.master.UserMapper;
+import com.springboot.configdemo.entity.master.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

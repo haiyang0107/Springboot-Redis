@@ -2,10 +2,17 @@ server:
   port: 8080
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 12345678
-    url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    #type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      mybatis:
+        url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+        username: root
+        password: 12345678
+      world:
+        url: jdbc:mysql://localhost:3306/world?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+        username: root
+        password: 12345678
 # mybatis 相关配置属性
 mybatis:
   # 定义 mapper 文件 位置

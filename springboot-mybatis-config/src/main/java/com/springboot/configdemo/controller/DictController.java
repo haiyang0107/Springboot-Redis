@@ -1,31 +1,31 @@
 package com.springboot.configdemo.controller;
 
-import com.springboot.configdemo.entity.master.User;
-import com.springboot.configdemo.service.UserService;
+import com.springboot.configdemo.entity.second.Dict;
+import com.springboot.configdemo.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/user")
-public class UserController {
+@RequestMapping(value = "/dict")
+public class DictController {
+
     @Autowired
-    UserService userService;
+    private DictService service;
 
     @RequestMapping(value = "/list")
-    public List<User> list(){
-        return userService.findList();
+    public List<Dict> list(){
+        return service.findList();
     }
 
     @RequestMapping(value = "/insert", produces = "application/json", method = RequestMethod.POST)
-    public User insert(@RequestBody User user){
-        return userService.insertUser(user);
+    public Dict insert(@RequestBody Dict dict){
+        return service.insertDict(dict);
     }
 
     @RequestMapping(value = "/delete", produces = "application/json", method = RequestMethod.POST)
     public boolean delete(@RequestParam int id){
-        return userService.deleteUser(id);
+        return service.deleteDict(id);
     }
-
 }

@@ -1,6 +1,6 @@
-package com.springboot.configdemo.dao;
+package com.springboot.configdemo.dao.master;
 
-import com.springboot.configdemo.entity.User;
+import com.springboot.configdemo.entity.master.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

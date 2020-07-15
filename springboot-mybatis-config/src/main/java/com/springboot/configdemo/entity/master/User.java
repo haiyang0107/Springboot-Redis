@@ -1,4 +1,4 @@
-package com.springboot.configdemo.entity;
+package com.springboot.configdemo.entity.master;
 
 import lombok.Data;
 
