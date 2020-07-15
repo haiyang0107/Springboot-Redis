@@ -14,4 +14,13 @@ public class UserService {
     public List<User> findList() {
         return mapper.findList();
     }
+
+    public User insertUser(User user) {
+
+        int i = mapper.insertUser(user);
+        if(i<=0){
+            return null;
+        }
+        return user;
+    }
 }

@@ -4,8 +4,7 @@ import com.springboot.configdemo.entity.User;
 import com.springboot.configdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +17,10 @@ public class UserController {
     @RequestMapping(value = "/list")
     public List<User> list(){
         return userService.findList();
+    }
+
+    @RequestMapping(value = "/insert", produces = "application/json", method = RequestMethod.POST)
+    public User insert(@RequestBody User user){
+        return userService.insertUser(user);
     }
 }
