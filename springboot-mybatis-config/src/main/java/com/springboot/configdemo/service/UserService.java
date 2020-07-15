@@ -23,4 +23,12 @@ public class UserService {
         }
         return user;
     }
+
+    public boolean deleteUser(int id) {
+            int i = mapper.deleteUser(id);
+            if(i<= 0){
+                return false;
+            }
+            return true ;
+    }
 }

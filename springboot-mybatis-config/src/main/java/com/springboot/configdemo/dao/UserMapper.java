@@ -18,4 +18,6 @@ public interface  UserMapper {
      * @return
      */
     public  int insertUser(User user);
+
+    public  int deleteUser(int id);
 }

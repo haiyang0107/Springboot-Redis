@@ -23,4 +23,10 @@ public class UserController {
     public User insert(@RequestBody User user){
         return userService.insertUser(user);
     }
+
+    @RequestMapping(value = "/delete", produces = "application/json", method = RequestMethod.POST)
+    public boolean delete(@RequestParam int id){
+        return userService.deleteUser(id);
+    }
+
 }
