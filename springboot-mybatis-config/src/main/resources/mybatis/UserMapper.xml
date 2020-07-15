@@ -9,6 +9,7 @@
         select * from t_user
     </select>
 
+    <!-- insert 时，没有 resultMap 或者 resultType 传入实体时，应该用parameterType  -->
     <insert id="insertUser"  parameterType="com.springboot.configdemo.entity.User">
         insert into t_user (`id`,`name`,`age`)
         VALUES (#{id},#{name},#{age})

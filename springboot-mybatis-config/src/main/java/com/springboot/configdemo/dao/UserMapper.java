@@ -12,5 +12,10 @@ public interface  UserMapper {
 
     public List<User> findList();
 
+    /**
+     * mybatis insert 返回结果只有-1，0和1
+     * @param user
+     * @return
+     */
     public  int insertUser(User user);
 }
