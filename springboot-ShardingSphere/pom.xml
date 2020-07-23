@@ -3,17 +3,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.springboot</groupId>
-        <artifactId>springboot-ShardingSphere</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.springboot</groupId>
-    <artifactId>sharding-jpa-dynamic-demo</artifactId>
+    <artifactId>springboot-ShardingSphere</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sharding-jpa-dynamic-demo</name>
+    <name>springboot-ShardingSphere</name>
     <description>Demo project for Spring Boot</description>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>sharding-dynamic-data</module>
+        <module>springboot-sharding-jdbc-properties</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -41,11 +45,6 @@
             <artifactId>mysql-connector-java</artifactId>
        </dependency>
 
-       <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid-spring-version}</version>
-       </dependency>
 
       <dependency>
             <groupId>org.apache.shardingsphere</groupId>
