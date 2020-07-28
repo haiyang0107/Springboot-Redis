@@ -1,7 +1,6 @@
 package play.cntroller;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +47,7 @@ public class PayAppController {
         logger.info("去支付接口入参:{}", JSON.toJSONString(payDto));
         Map<String,Object> result =  verifyParam(payDto);
         if(Boolean.valueOf(result.get("status").toString())){
-            Map<String,Object> payresultmap = Maps.newHashMap();
+            Map<String,Object> payresultmap = new HashMap<>();
             if(payDto.getPayType().equals(PayConstants.ALIPAY)){
                 String payresult = appService.getAliPayOrderStr(payDto);
                 if(payresult.equals(PayConstants.FAIL)){
@@ -144,8 +143,8 @@ public class PayAppController {
     @RequestMapping(value="/refundmoney")
     @ResponseBody
     public Map<String, Object> refundmoney(RefundDto refundDto){
-        Map<String,Object> result = Maps.newHashMap();
-        Map<String,Object> payresultmap = Maps.newHashMap();
+        Map<String,Object> result = new HashMap<>();
+        Map<String,Object> payresultmap = new HashMap<>();
         if (!refundDto.getOutTradeNo().equals("")){
             if(refundDto.getPayType().equals(PayConstants.ALIPAY)){
                 String retratresult =  appService.retreatPayOrderStr(refundDto);
@@ -294,7 +293,7 @@ public class PayAppController {
     @RequestMapping(value="/getPayDate")
     @ResponseBody
     public Map<String,Object> getPayDate(PayDto payDto){
-        Map<String,Object> resultmap = Maps.newHashMap();
+        Map<String,Object> resultmap = new HashMap<>();
         if (!payDto.getOutTradeNo().equals("")){
             if (payDto.getPayType().equals(PayConstants.ALIPAY)){
                 resultmap = appService.getAliPayDate(payDto);
